@@ -10,15 +10,18 @@ import javax.persistence.Id;
 public class Authorities {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-private int id;
+	
+private int authoritiesId;
 	@Column(unique=true, nullable=false)
 private String username;
 private String role;
-public int getId() {
-	return id;
+
+
+public int getAuthoritiesId() {
+	return authoritiesId;
 }
-public void setId(int id) {
-	this.id = id;
+public void setAuthoritiesId(int authoritiesId) {
+	this.authoritiesId = authoritiesId;
 }
 public String getUsername() {
 	return username;

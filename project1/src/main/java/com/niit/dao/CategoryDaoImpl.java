@@ -24,4 +24,12 @@ private SessionFactory sessionFactory;
 		return categories;
 	}
 
+	 public void saveCategory(Category category){
+		   Session session=sessionFactory.openSession();
+		   System.out.println("Category ID BEFORE INSERTION" +category.getCid());
+		   session.save(category);
+		   System.out.println("Category ID AFTER INSERTION" +category.getCid());
+		   session.flush();
+		   session.close();
+	   }
 }

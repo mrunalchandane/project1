@@ -16,9 +16,9 @@ public class ProductDaoImpl implements ProductDao{
 private SessionFactory sessionFactory;
    public void saveOrUpdateProduct(Product product){
 	   Session session=sessionFactory.openSession();
-	   System.out.println("PRODUCT ID BEFORE INSERTION" +product.getId());
+	   System.out.println("PRODUCT ID BEFORE INSERTION" +product.getProductId());
 	   session.saveOrUpdate(product);
-	   System.out.println("PRODUCT ID AFTER INSERTION" +product.getId());
+	   System.out.println("PRODUCT ID AFTER INSERTION" +product.getProductId());
 	   session.flush();
 	   session.close();
    }
@@ -31,15 +31,15 @@ private SessionFactory sessionFactory;
 		session.close();
 		return products;
    }
-   public Product getProductById(int id) {
+   public Product getProductById(int productId) {
        Session session=sessionFactory.openSession();
-       Product product=(Product)session.get(Product.class, id);
+       Product product=(Product)session.get(Product.class, productId);
        session.close();
        return product;
 }
-public void deleteProduct(int id) {
+public void deleteProduct(int productId) {
 	Session session=sessionFactory.openSession();
-	 Product product=(Product)session.get(Product.class, id); //persistent
+	 Product product=(Product)session.get(Product.class, productId); //persistent
 	session.delete(product);
 	session.flush();
 	session.close();

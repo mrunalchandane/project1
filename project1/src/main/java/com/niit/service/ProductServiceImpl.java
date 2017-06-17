@@ -16,14 +16,14 @@ public class ProductServiceImpl implements ProductService {
 	}
 	
 	public List<Product> getAllProducts() {
-		// TODO Auto-generated method stub
+		
 		return productDao.getAllProducts();
 	}
-	public Product getProductById(int id) {
-		return productDao.getProductById(id);
+	public Product getProductById(int productId) {
+		return productDao.getProductById(productId);
 	}
-	public void deleteProduct(int id) {
-		productDao.deleteProduct(id);
+	public void deleteProduct(int productId) {
+		productDao.deleteProduct(productId);
 		
 	}
 

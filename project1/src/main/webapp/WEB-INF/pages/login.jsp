@@ -8,17 +8,35 @@
 <title>Insert title here</title>
 </head>
 <body>
-<div style="border:2px solid black; top:20px; background-color:skyblue;width:400px;margin-left:10px;">
-<h3>ENTER USERNAME AND PASSWORD <br><br></h3>
+<div class="container-wrapper">
+<div style="border:2px solid black; top:10%; background-color:skyblue;width:30%;margin-left:2%;overfow:hidden">
+<h3>ENTER USERNAME AND PASSWORD </h3><br><br>
 ${error}
 ${logout}
 ${registrationSuccess}
-<form action="<c:url value="/j_spring_security_check"></c:url>">
-Enter username <input type="text" name="j_username"><br><br>
-Enter password <input type="text" name="j_password"><br><br>
-<input style="font-size: 20px;align:center" type="submit" value="SUBMIT">
-</form>
+ <form name="loginForm" action="<c:url value="/j_spring_security_check" />" method="POST">
+                <c:if test="${not empty error}">
+                    <div class="error" style="color: #ff0000;">${error}</div>
+                </c:if>
+                <div class="form-group">
+                    <label for="username">User: </label>
+                    <input type="text" id="username" name="username" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" class="form-control" />
+                </div>
+
+                <input type="submit" value="Submit" class="btn btn-default">
+
+                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+            </form>
+
+</div>
 </div>
 </body>
 <%@include file="footer.jsp" %>
 </html>
+
+
+

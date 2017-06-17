@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-
+<%@include file="header.jsp" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="url" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ include file="header.jsp" %>
+
 <%@ page isELIgnored="false" %>
 <html>
 <head>
@@ -17,12 +17,12 @@
   <div class="container">
   
   <url:url var="url" value="/admin/product/saveproduct"></url:url>
-<form:form action="${url }" modelAttribute="product" method="post" enctype="multipart/form-data">
+<form:form action="${url }" modelAttribute="product" method="POST" enctype="multipart/form-data">
   
   <div class="form-group">
-  <label for="id"></label>
-  <form:hidden path="id"></form:hidden>
-  <form:errors path="id" cssStyle="color:red"></form:errors>
+  <label for="productId"></label>
+  <form:hidden path="productId"></form:hidden>
+  <form:errors path="productId" cssStyle="color:red"></form:errors>
   </div>
   
   <div class="form-group">
@@ -70,6 +70,7 @@
 </div>
 
   <input type="submit" value="Add Product">
+  <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" /> 
   </form:form>
   </div>
 </div>

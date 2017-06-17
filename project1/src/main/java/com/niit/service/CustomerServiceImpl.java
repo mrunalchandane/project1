@@ -20,5 +20,10 @@ private CustomerDao customerDao;
 		public List<Customer> getCustomers() {
 			return customerDao.getCustomers();
 		}
+		
+		public Customer getCustomerByName(String username) {
+			
+			return customerDao.getCustomerByName(username);
+		}
 	
 }

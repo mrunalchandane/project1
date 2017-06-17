@@ -9,10 +9,10 @@
 
 div.seg
 {
-			height: 400px;
 			width :100%;
 			position: relative;
 			background-color:transparent;
+			overflow:hidden;
 }
 
 div.rec
@@ -65,6 +65,7 @@ div.rec
 </style>
 </head>
 <body>
+<div class="container-wrapper">
 <div class="container-fluid" style="background-color:skyblue; padding-top:-20px">
 <div id="myCarousel" class="carousel slide" data-ride="carousel" >
             <!-- Indicators -->
@@ -123,13 +124,17 @@ div.rec
         </div><!-- /.carousel -->
 
 </div>
+  
 <div class="seg" style="top:0px;">
-		<div style="height: 220px;width: 200px;opacity:0.8;color:white;top:100px;left:100px;background-color: limegreen;position: absolute;font-size: 40px;font-family:lucida;text-align: center;padding-top: 0px;">	<b>free shipping !!!</b> 
-			<p style="font-size: 20px;padding-top:10px;"> On all orders over Rs.500 all over India</p>
+		 <div style="height: 10%;width: 20%;opacity:0.8;color:yellow;top:5%;left:5%;
+		background-color: transparent;position: absolute;font-family:lucida;text-align: 
+		center;padding-top: 0px;">	<h1>Free Shipping !!!</h1> 
+			<p > <h3>On all orders over Rs.500 all over India</h3></p>
 		</div>
-		<img src="resources/images/swing7.jpg" style="height:100%;width:100%"></img>
+		<img src="resources/images/swing7.jpg" style="width:100%"></img>
 </div>
 
+<!--
 <div class="seg" style="top:0px;" >
 	<img src="resources/images/1.jpe" style="position:absolute;height: 400px;width: 200px;z-index: 10" ></img>
 	<div class="rec">
@@ -152,8 +157,8 @@ div.rec
 				<p class="text" style="font-size: 20px; margin-top: 15px;"> Rope Ladders <br> Rock Climbs <br> 
 				Overhead Ladders <br> Handles and Bars</p></div>
 	</div>
+</div>-->
 </div>
-
 
 </body>
 <%@include file="footer.jsp" %>

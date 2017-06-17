@@ -2,17 +2,21 @@ package com.niit.dao;
 
 import java.util.List;
 
+import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.niit.model.Authorities;
 import com.niit.model.Cart;
 import com.niit.model.Customer;
 import com.niit.model.Users;
 
+
+@Transactional
 @Repository
 public class CustomerDaoImpl implements CustomerDao{
 	@Autowired
@@ -32,6 +36,7 @@ private SessionFactory sessionFactory;
 		Cart cart=new Cart();
 		cart.setCustomer(customer); // update the value of customer_id column in the cart table.
 		customer.setCart(cart);//update the cart_id in customer table
+		customer.setUsername(users.getUsername());
 		session.save(customer); // Users,Customer,BillingAddress,ShippingAddress,Cart
 		session.flush();
 		session.close();		
@@ -46,4 +51,22 @@ private SessionFactory sessionFactory;
 		return customers;
 	}
 
+	 
+
+	
+	@Transactional 
+	public Customer getCustomerByName(String username) {
+		 try {
+			 System.out.println("in getCustomerByName with username =  "+username);
+			Session session = sessionFactory.getCurrentSession();
+			    Query query = session.createQuery("from Customer where username = ?");
+			    query.setString(0, username);
+			    return (Customer) query.uniqueResult();
+		} catch (HibernateException e) {
+			// TODO Auto-generated catch block
+			System.out.println("Exception in getCustomerByName ");
+			e.printStackTrace();
+			return null;
+		}
+	}
 }

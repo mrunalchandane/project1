@@ -6,23 +6,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
-<style>
-div.seg1contact
-		{
-			height: 600px;
-			width: 101.2%;
-			position: relative;
-			display: block;
-			top:10px;
-			margin-left: -8px;
-		}
-		
-</style>
 </head>
 <body>
-
-<div class="seg1contact" > 
-      <p ><h2 style="text-align: center;">Thanks for stopping by Kid's Sports Store! <br>Building a sport set is something fun for moms, dads, and kids all around!</h2></p>
+<div class="container-wrapper" > 
+       <h2 style="text-align: center;">Thanks for stopping by Kid's Sports Store! <br>Building a sport set is something fun for moms, dads, and kids all around!</h2> 
 
 		<p style="text-indent: 45px;text-align: left;margin-left: 15px;margin-right: 15px;">Our goal is to provide the safest, and most relevant selection of quality sport set	parts online -- all at affordable prices. 
 		Your shopping experience with us is the start of all the fun! You can find the widest selection of sport set parts and 
@@ -30,7 +17,7 @@ div.seg1contact
 		backyard sport set project or browse our category of complete wooden sport sets and fort kits. 
 		All the sport set parts and playset accessories are right here for building the perfect playground for your child!</p>
 		
-		<p><h2 style="text-align: center;">Need Help With Your Sport Set Project?</h2></p>	
+		<h2 style="text-align: center;">Need Help With Your Sport Set Project?</h2> 	
 
 		<p style="text-indent: 45px;text-align: justify;margin-left: 15px;margin-right: 15px;">We're here to offer help with your
 		 project and assist you in choosing the right sport set parts and playground accessories. Our team of friendly customer

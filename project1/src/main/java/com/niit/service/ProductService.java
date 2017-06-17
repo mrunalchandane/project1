@@ -8,7 +8,7 @@ void saveOrUpdateProduct(Product product);
 
 List<Product> getAllProducts();
 
-Product getProductById(int id);
+Product getProductById(int productId);
 
-void deleteProduct(int id);
+void deleteProduct(int productId);
 }

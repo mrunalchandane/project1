@@ -7,4 +7,5 @@ import com.niit.model.Customer;
 public interface CustomerService {
 void saveCustomer(Customer customer);
 List<Customer> getCustomers();
+Customer getCustomerByName(String username);
 }

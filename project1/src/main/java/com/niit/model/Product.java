@@ -15,7 +15,7 @@ import org.springframework.web.multipart.MultipartFile;
 public class Product {
 @Id
 @GeneratedValue(strategy=GenerationType.AUTO)
-private int id;
+private int productId;
 @NotEmpty(message="Product name is mandatory")
 private String name;
 @NotEmpty(message="Manufacturer details is mandatory")
@@ -26,9 +26,12 @@ private double price;
 private int unitInStock;
 @NotEmpty(message="Description is mandatory")
 private String description;
+
+private int quantityperproduct;
+
+
 @ManyToOne
 @JoinColumn(name="cid")
-
 private Category category;
 @Transient
 private MultipartFile image; /// configure bean for this in dispatcher-servlet and add jar files common upload and 
@@ -54,11 +57,12 @@ public Category getCategory() {
 public void setCategory(Category category) {
 	this.category = category;
 }
-public int getId() {
-	return id;
+
+public int getProductId() {
+	return productId;
 }
-public void setId(int id) {
-	this.id = id;
+public void setProductId(int productId) {
+	this.productId = productId;
 }
 public String getName() {
 	return name;
@@ -83,6 +87,12 @@ public int getUnitInStock() {
 }
 public void setUnitInStock(int unitInStock) {
 	this.unitInStock = unitInStock;
+}
+public int getQuantityperproduct() {
+	return quantityperproduct;
+}
+public void setQuantityperproduct(int quantityperproduct) {
+	this.quantityperproduct = quantityperproduct;
 }
 
 

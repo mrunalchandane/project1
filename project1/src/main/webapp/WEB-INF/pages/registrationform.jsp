@@ -18,9 +18,9 @@
 <div class="boxed" style= "border:1px solid">
 
 <div class="form-group">
-<label for="id"></label>
-<form:hidden path="id" ></form:hidden>
-<form:errors path="id" cssStyle="color:red"></form:errors>
+<label for="customerId"></label>
+<form:hidden path="customerId" ></form:hidden>
+<form:errors path="customerId" cssStyle="color:red"></form:errors>
 </div>
 
 
@@ -93,6 +93,12 @@
 </div>
 
 <div class="form-group">
+<label for="billingAddress.state">Enter State</label>
+<form:input path="billingAddress.state"></form:input>
+<form:errors path="billingAddress.state" cssStyle="color:red"></form:errors>
+</div>
+
+<div class="form-group">
 <label for="billingAddress.country">Enter country</label>
 <form:input path="billingAddress.country"></form:input>
 <form:errors path="billingAddress.country" cssStyle="color:red"></form:errors>
@@ -124,6 +130,12 @@
 <label for="shippingAddress.city">Enter City</label>
 <form:input path="shippingAddress.city"></form:input>
 <form:errors path="shippingAddress.city" cssStyle="color:red"></form:errors>
+</div>
+
+<div class="form-group">
+<label for="shippingAddress.state">Enter State</label>
+<form:input path="shippingAddress.state"></form:input>
+<form:errors path="shippingAddress.state" cssStyle="color:red"></form:errors>
 </div>
 
 <div class="form-group">

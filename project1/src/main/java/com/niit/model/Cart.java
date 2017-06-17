@@ -11,16 +11,27 @@ import javax.persistence.OneToOne;
 public class Cart {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-private int id;
+private int cartId;
 private double grandTotal;
+private String paymentMode;
+
 @OneToOne
 @JoinColumn(name="customer_id")
 private Customer customer;
-public int getId() {
-	return id;
+
+
+
+public Customer getCustomer() {
+	return customer;
 }
-public void setId(int id) {
-	this.id = id;
+public void setCustomer(Customer customer) {
+	this.customer = customer;
+}
+public int getCartId() {
+	return cartId;
+}
+public void setCartId(int cartId) {
+	this.cartId = cartId;
 }
 public double getGrandTotal() {
 	return grandTotal;
@@ -28,11 +39,14 @@ public double getGrandTotal() {
 public void setGrandTotal(double grandTotal) {
 	this.grandTotal = grandTotal;
 }
-public Customer getCustomer() {
-	return customer;
+
+public String getPaymentMode() {
+	return paymentMode;
 }
-public void setCustomer(Customer customer) {
-	this.customer = customer;
+public void setPaymentMode(String paymentMode) {
+	this.paymentMode = paymentMode;
 }
+
+
 
 }

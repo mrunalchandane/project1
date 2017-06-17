@@ -18,7 +18,8 @@ import org.hibernate.validator.constraints.NotEmpty;
 public class Customer {
 		@Id
 		@GeneratedValue(strategy=GenerationType.AUTO)
-	private int id;
+		private int customerId;
+		private String username;
 		
 		@NotEmpty
 	private String firstname;
@@ -53,11 +54,12 @@ public class Customer {
 	@Valid
 	private Cart cart;
 
-	public int getId() {
-		return id;
+	
+	public int getCustomerId() {
+		return customerId;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void setCustomerId(int customerId) {
+		this.customerId = customerId;
 	}
 	public String getFirstname() {
 		return firstname;
@@ -107,6 +109,12 @@ public class Customer {
 	}
 	public void setCart(Cart cart) {
 		this.cart = cart;
+	}
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
 	}
 	
 	

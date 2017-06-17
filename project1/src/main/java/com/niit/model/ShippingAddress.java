@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
@@ -11,7 +13,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 public class ShippingAddress {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private int id;
+	private int shippingId;
 	@NotEmpty
 	private String apartmentnumber;
 	@NotEmpty
@@ -19,14 +21,18 @@ public class ShippingAddress {
 	@NotEmpty
 	private String city;
 	@NotEmpty
+	private String state;
+	@NotEmpty
 	private String country;
 	@NotEmpty
 	private String zipcode;
-	public int getId() {
-		return id;
+	
+		
+	public int getShippingId() {
+		return shippingId;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void setShippingId(int shippingId) {
+		this.shippingId = shippingId;
 	}
 	public String getApartmentnumber() {
 		return apartmentnumber;
@@ -51,6 +57,13 @@ public class ShippingAddress {
 	}
 	public void setCountry(String country) {
 		this.country = country;
+	}
+	
+	public String getState() {
+		return state;
+	}
+	public void setState(String state) {
+		this.state = state;
 	}
 	public String getZipcode() {
 		return zipcode;

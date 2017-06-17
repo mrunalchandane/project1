@@ -1,5 +1,4 @@
 
-
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 
@@ -56,7 +55,7 @@
         </button>
 		
 		<div class="navbar-header">
-			<a class="navbar-brand" href="#"><img src="resources/images/ast.jpg" alt="SPORTS" height="30px" width="30px"></a>
+			<a class="navbar-brand" href="#"><img src="resources/images/my.jpg" height="30" width="30"></a>
 		</div>
 		
 		<div class="collapse navbar-collapse" id="collapse-example">
@@ -71,6 +70,11 @@
 				<security:authorize access="hasRole('ROLE_ADMIN')">
 				<url:url value="/admin/product/productform" var="url"></url:url>
 				<li><a href="${url }">Add New Product</a></li>
+				</security:authorize>
+				
+				<security:authorize access="hasRole('ROLE_ADMIN')">
+				<url:url value="/admin/category/categoryform" var="url"></url:url>
+				<li><a href="${url }">Add New Category</a></li>
 				</security:authorize>
 				
 				<url:url value="/all/product/productlist" var="url"></url:url>
@@ -90,19 +94,26 @@
 					</ul>
 				</li>
 			
+			<security:authorize access="hasRole('ROLE_USER')">
+			 <url:url value="/cart" var="url"></url:url>	
+			<li><a href="${url}">My Cart <span class="glyphicon glyphicon-shopping-cart"></a><li>
+			</security:authorize>
+			
 			<c:if test="${pageContext.request.userPrincipal.name!=null }">
-			<li><a href="">Welcome ${pageContext.request.userPrincipal.name}</a></li>	
+			<li><a href="">Welcome ${pageContext.request.userPrincipal.name}</a></li>
+			
 			</c:if>
 	
-			<url:url value="/all/registrationform" var="url"></url:url>
 			<c:if test="${pageContext.request.userPrincipal.name==null}">
-			<li><a href="${url}"> Register </a></li>
-			<url:url value="/login" var="url"></url:url>
-			<li><a href="${url}"> Sign in </a></li>
+				<url:url value="/all/registrationform" var="url"></url:url>
+				<li><a href="${url}"> Register </a></li>
+				<url:url value="/login" var="url"></url:url>
+				<li><a href="${url }"> Sign in </a></li>
 			</c:if>
 	
 			<c:if test="${pageContext.request.userPrincipal.name!=null}">
 			<li><a href="<c:url value="/j_spring_security_logout"></c:url>">Logout</a></li>
+			
 			</c:if>
 		</ul>
 	</div>
